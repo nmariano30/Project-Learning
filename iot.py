@@ -14,9 +14,9 @@ import datetime
 Temp_Sensor = 17
 
 # SENSOR_DEVICE_ID = 'YOUR_DEVICE_ID'
-URI = 'MyIoTHubLearning.azure-devices.net'
-KEY = '+GsZCwKsColNzv2KqJISh+DYHz8mF53CVM5mmBd1l3s='
-IOT_DEVICE_ID = 'RaspberryPi'
+URI = 'YOURURI'
+KEY = 'YOUACCESSKEY'
+IOT_DEVICE_ID = 'YOURIOTDEVICEID'
 POLICY = 'iothubowner'
 
 # Timing constants
