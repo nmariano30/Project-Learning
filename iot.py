@@ -52,11 +52,11 @@ def main():
         # Send some test
 
         if result.is_valid():
-            message = { "Last valid input: " + str(datetime.datetime.now()),
+            message = ( "Last valid input: " + str(datetime.datetime.now()),
                         "Temperature: %d C" % result.temperature,
                         "Temperature: %d F" % ((result.temperature * 9 / 5) + 32),
                         "Humidity: %-3.1f %%" % result.humidity
-                        }
+                      )
 
         data = json.dumps(message)
         print(data)
