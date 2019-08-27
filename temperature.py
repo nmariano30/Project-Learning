@@ -38,9 +38,6 @@ instance = dht11.DHT11(pin=17)
 
 MSG_TXT = ""
 
-
-
-
 def send_confirmation_callback(message, result, user_context):
     print ( "IoT Hub responded to message with status: %s" % (result) )
 
@@ -58,8 +55,7 @@ def iothub_client_telemetry_sample_run():
 
         while True:
             # Build the message with simulated telemetry values.
-
-        
+ 
             result = instance.read()
 
             if result.is_valid():
@@ -73,7 +69,6 @@ def iothub_client_telemetry_sample_run():
                 MSG_TXT = "The temperature is {0} and Humidity is {1}%".format(int(result.temperature) * 9/5+32 , result.humidity)
                 print(MSG_TXT)
                 
-
             msg_txt_formatted = {"temperature": temperature ,"humidity": humidity }
             message = IoTHubMessage(str(msg_txt_formatted))
 
