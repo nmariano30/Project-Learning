@@ -1,0 +1,34 @@
+# import modules
+import dht11
+import RPi.GPIO as GPIO
+import time
+import datetime
+
+# Define GPIO
+Temp_sensor=17
+
+def main():
+    # Main program block
+    GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
+    instance = dht11.DHT11(pin = Temp_sensor)
+
+    # Initialize display
+
+    while True:
+    #get DHT11 sensor value
+        result = instance.read()
+    # Send some test
+        if result.is_valid():
+                print("Last valid input: " + str(datetime.datetime.now()))
+                print("Temperature: %d C" % result.temperature)
+                print("Temperature: %d F" % ((result.temperature * 9/5)+32))
+                print("Humidity: %-3.1f %%" % result.humidity)
+        time.sleep(30)
+
+if __name__ == '__main__':
+
+  try:
+    main()
+  except KeyboardInterrupt:
+    pass
